@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>igotthis</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width,minimal-ui">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/override.css">
+</head>
+<body ng-app="hacknycapp">
+
+<div class="outside-container">
+    <!-- Navigation bar -->
+    <!--<div ng-controller="NavbarCtrl" ng-include="'partials/main/navbar.html'"></div>-->
+<!---->
+    <!--<div growl></div>-->
+
+    <div>
+        <nav class="navbar navbar-fixed-top navbar-color">
+            <div class="new-inner-scene-container">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-link cursor-hand" ng-click="showPage('/')"> igotthis </a>
+                </div>
+            </div>
+
+            <div ng-if="currentUser">
+                <a class="navbar-link" ng-click="logout()">Logout</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="content">
+        <!--<div class="content">-->
+        <div class="view-frame" ng-view=""></div>
+    </div>
+
+    <!--<div ng-include="'partials/main/footer.html'"></div>-->
+    <!--<div class="partial-footer" ng-include="'partials/main/allfooter.html'"></div>-->
+</div>
+
+<script src="scripts/angularjs/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+<script src="scripts/config.js"></script>
+
+<script src="scripts/services/user.js"></script>
+
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/signup.js"></script>
+<script src="scripts/controllers/addgroup.js"></script>
+<script src="scripts/controllers/account.js"></script>
+<script src="scripts/controllers/items.js"></script>
+
+<script src="scripts/app.js"></script>
+
+</body>
+</html>

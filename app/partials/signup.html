@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row upload-container">
+        <div class="col-sm-12 text-center">
+            <h1>Sign up</h1>
+            Have an account? <a ng-click="showPage('/')" class="text-center new-account cursor-hand">Log in.</a>
+            <hr>
+        </div>
+        <div class="col-sm-6 col-sm-offset-3">
+            <p>&nbsp</p>
+            <form class="form" name="form" ng-submit="register(form)" novalidate>
+
+                <div class="form-group" ng-class="{ 'has-success': form.username.$valid && submitted,
+                                          'has-error': form.username.$invalid && submitted }">
+
+                    <input type="text" name="username" class="form-control" ng-model="user.username"
+                           placeholder="Username"
+                           required
+                           mongoose-error/>
+
+                    <p class="help-block" ng-show="form.username.$error.required && submitted">
+                        A Username is required
+                    </p>
+
+                    <p class="help-block" ng-show="form.username.$error.mongoose">
+                        {{ errors.username }}
+                    </p>
+                </div>
+
+                <!--<div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,-->
+                                          <!--'has-error': form.email.$invalid && submitted }">-->
+                    <!--<input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email"-->
+                           <!--required-->
+                           <!--mongoose-error/>-->
+
+                    <!--<p class="help-block" ng-show="form.email.$error.email && submitted">-->
+                        <!--Doesn't look like a valid email.-->
+                    <!--</p>-->
+
+                    <!--<p class="help-block" ng-show="form.email.$error.required && submitted">-->
+                        <!--What's your email address?-->
+                    <!--</p>-->
+
+                    <!--<p class="help-block" ng-show="form.email.$error.mongoose">-->
+                        <!--{{ errors.email }}-->
+                    <!--</p>-->
+
+                <!--</div>-->
+
+                <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                          'has-error': form.password.$invalid && submitted }">
+
+                    <input type="password" name="password" class="form-control" ng-model="user.password"
+                           placeholder="Password"
+                           ng-minlength="3"
+                           required
+                           mongoose-error/>
+
+                    <p class="help-block"
+                       ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+                        Password must be at least 3 characters.
+                    </p>
+
+                    <p class="help-block" ng-show="form.password.$error.mongoose">
+                        {{ errors.password }}
+                    </p>
+                </div>
+
+                <!-- Check if there was an error in the query to get scenes -->
+                <div class="form-group has-error" ng-show="errors.other">
+                    <p class="help-block">{{errors.other}}</p>
+
+                    <p>{{errors.message}}</p>
+                </div>
+
+                <button class="btn btn-primary col-sm-12 col-xs-12" type="submit">Sign up</button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
