@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row" ng-if="!creatingGroup">
+        <div class="col-sm-12 text-center">
+            <div class="">
+                <img src="/images/group.png">
+            </div>
+
+            <h1 class="">
+                Create a group.
+            </h1>
+        </div>
+
+        <div class="col-sm-4 col-sm-offset-4">
+
+            <div class="text-center">
+                Message your friend groups about what items the group needs for any event or time.
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-default btn-block" ng-click="changeCreatingGroup()">
+                    CREATE A GROUP
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" ng-if="creatingGroup">
+        <!-- TODO: group name field, username(s) list field, add icon, etc. -->
+        <button class="btn btn-default" ng-click="changeCreatingGroup()">
+            Cancel
+        </button>
+
+        <button class="btn btn-default" ng-click="createGroup()">
+            Done
+        </button>
+
+        <form class="form" name="addgroupform" novalidate>
+
+            <!-- Group name field -->
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" ng-model="group.name"
+                       placeholder="Group name">
+            </div>
+
+            <!-- Current user followed by List of users with an input field at the end to add users -->
+            <div class="">
+                {{::currentUser.username}}
+            </div>
+
+            <div ng-repeat="user in group.users">
+                {{::user}} <button class="btn btn-default inline-block" ng-click="removeUser($index)">X</button>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="newuser" class="form-control" ng-model="newuserObject.user" placeholder="Enter username">
+            </div>
+            <button class="btn btn-danger" ng-click="addUser()">+</button>
+
+        </form>
+
+    </div>
+
+</div>
+

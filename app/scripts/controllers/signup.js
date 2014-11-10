@@ -27,7 +27,8 @@ angular.module('signupController', ['userService'])
                 document.cookie = 'user=' + JSON.stringify(res.data.user) + maxAge;
                 document.cookie = 'token=' + res.data.token + maxAge;
 
-                $location.path('/');
+//                $location.path('/');
+                $location.path('/groups/add');
 
 //                $rootScope.$emit('updateMessagesNavbar');
 //

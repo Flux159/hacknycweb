@@ -19,6 +19,8 @@ angular.module('loginController', ['userService'])
 
                 $location.path('/');
 
+                //TODO: Check return data & see if you need to go to create new group page or items page
+
             }).catch(function(err) {
 
                 //TODO: Handle error
