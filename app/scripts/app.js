@@ -29,7 +29,7 @@ angular.module('hacknycapp', [
             templateUrl: 'partials/addgroup.html',
             controller: 'AddGroupCtrl'
         })
-        .when(routeprefix + '/items', {
+        .when(routeprefix + '/groups/:groupid', {
             templateUrl: 'partials/items.html',
             controller: 'ItemsCtrl'
         })

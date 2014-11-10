@@ -29,6 +29,18 @@ angular.module('addgroupController', ['userService', 'groupService'])
 
         $scope.createGroup = function() {
             //TODO: Need to add current User to list of users (at front), then create group w/ backend call
+
+            var submitData = {users: @scope.group.users, name: $scope.group.name};
+            submitData.users.unshift($rootScope.currentUser.username);
+
+            Group.create(submitData).then(function(res) {
+
+                //Go to items page for this group
+
+            }).catch(function(err) {
+
+            });
+
         };
 
     });

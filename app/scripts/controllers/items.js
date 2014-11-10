@@ -5,4 +5,6 @@ angular.module('itemsController', ['userService'])
 
         $scope.testing = 'blah';
 
+        //Show items for a given group (based on group id)
+
     });

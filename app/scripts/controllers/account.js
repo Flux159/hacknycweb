@@ -5,4 +5,6 @@ angular.module('accountController', ['userService'])
 
         $scope.testing = 'blah';
 
+        //List all groups for account & allow user to browse to that group's item page
+
     });
